@@ -13,7 +13,7 @@ struct MovementButton: ViewModifier {
             .frame(minWidth: 75, minHeight: 20)
             .padding()
             .foregroundColor(.black)
-            .background(.pink)
+            .background(Color("CherryPink"))
             .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
@@ -26,8 +26,6 @@ extension View {
 
 struct ContentView: View {
     @State private var currentAt = 0
-    @State private var previousDisabled = true
-    @State private var nextDisabled = false
     @State private var hiraganaChars = ["あ", "い", "う", "え", "お"]
     @State private var meaningChars = ["A", "I", "U", "E", "O"]
     
