@@ -26,8 +26,8 @@ extension View {
 
 struct ContentView: View {
     @State private var currentAt = 0
-    @State private var hiraganaChars = ["あ", "い", "う", "え", "お"]
-    @State private var meaningChars = ["A", "I", "U", "E", "O"]
+    @State private var hiraganaChars = ["あ", "い", "う", "え", "お", "か", "き", "く", "け", "こ", "さ", "し", "す", "せ", "そ"]
+    @State private var meaningChars = ["A", "I", "U", "E", "O", "Ka", "Ki", "Ku", "Ke", "Ko", "Sa", "Shi", "Su", "Se", "So"]
     
     var body: some View {
         ZStack {
@@ -35,12 +35,14 @@ struct ContentView: View {
                 Spacer()
                 Text("Meaning: \(meaningChars[currentAt])")
                     .font(.title)
-                Text(hiraganaChars[currentAt])
-                    .font(.system(size: 200))
+                Circle()
+                    .fill(Color.red)
+                    .frame(width: 250, height: 250)
+                    .overlay(
+                        Text(hiraganaChars[currentAt])
+                            .font(.system(size: 200))
+                    )
                     .padding()
-                    .background(Circle()
-                                    .fill(Color.red)
-                                    .frame(width: 250, height: 250))
                 Spacer()
                 HStack {
                     Spacer()
